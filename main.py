@@ -33,6 +33,9 @@ if __name__ == "__main__":
         target = clusters.pop(clusters_idx)
         clusters += [target[:cluster_idx+1], target[cluster_idx+1:]]
 
+    print("Agrupamentos:")
     with open(fileout, "w") as file:
         for cluster in clusters:
-            file.writelines(", ".join(map(str, (x + 1 for x in cluster))) + "\n")
+            line = ", ".join(map(str, (x + 1 for x in cluster))) + "\n"
+            print(line, end="")
+            file.writelines(line)
