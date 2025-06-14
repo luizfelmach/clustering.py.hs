@@ -15,6 +15,11 @@ testes = [
     ("samples/in/base3.csv", "samples/myout/base3k2.txt", 2),
     ("samples/in/base3.csv", "samples/myout/base3k3.txt", 3),
     ("samples/in/base3.csv", "samples/myout/base3k5.txt", 5),
+
+    ("samples/in/bat1.txt", "samples/myout/bat1.txt", 3),
+    ("samples/in/bat2.txt", "samples/myout/bat2.txt", 3),
+    ("samples/in/bat3.txt", "samples/myout/bat3.txt", 6),
+    ("samples/in/bat4.txt", "samples/myout/bat4.txt", 9),
 ]
 
 script_alvo = "main.py"
