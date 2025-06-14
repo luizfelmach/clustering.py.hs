@@ -19,13 +19,13 @@ if __name__ == "__main__":
         )
         vis[idx] = True
         path.append(idx)
-        distances[f"{path[-2]}{idx}"] = euclidean(current, vectors[idx])
+        distances[(path[-2], idx)] = euclidean(current, vectors[idx])
 
     clusters =  [ path ]
 
     for _ in range(k-1):
         clusters_idx, cluster_idx, dist_max = max(
-            ((i, j, distances[f"{v1}{cluster[j+1]}"])
+            ((i, j, distances[(v1, cluster[j+1])])
              for i, cluster in enumerate(clusters)
              for j, v1 in enumerate(cluster[:-1])),
             key=lambda x: x[2]
