@@ -22,7 +22,7 @@ testes = [
     ("samples/in/bat4.txt", "samples/myout/bat4.txt", 9),
 ]
 
-script_alvo = "main.py"
+run = ["runhaskell", "haskell/main.hs"]
 
 for filein, fileout, k in testes:
     print(f"🔄 Rodando teste com {filein}, K={k}")
@@ -30,7 +30,7 @@ for filein, fileout, k in testes:
     entrada_simulada = f"{filein}\n{fileout}\n{k}\n"
 
     resultado = subprocess.run(
-        ["python", script_alvo],
+        run,
         input=entrada_simulada.encode(),
         capture_output=True,
     )
