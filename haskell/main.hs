@@ -37,10 +37,10 @@ splitPath p = splitAt idx p
     where (_, idx) = maxLink p
 
 selectMaxLink :: Cluster -> (Path, Cluster)
-selectMaxLink cs = (maxPath, others)
+selectMaxLink cs = (maxPath, filter (/= maxPath) cs)
     where
-    maxPath = maximumBy (comparing (fst . maxLink)) cs
-    others = filter (/= maxPath) cs
+    multiLinkPaths = filter (\p -> length p >= 2) cs
+    maxPath = maximumBy (comparing (fst . maxLink)) multiLinkPaths
 
 clustering :: Cluster -> Cluster
 clustering cluster = newPaths ++ rest
