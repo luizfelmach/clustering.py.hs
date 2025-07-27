@@ -22,7 +22,7 @@ testes = [
     ("samples/in/bat4.txt", "samples/myout/bat4.txt", 9),
 ]
 
-run = ["runhaskell", "haskell/main.hs"]
+run = ["python", "python/main.py"]
 
 for filein, fileout, k in testes:
     print(f"🔄 Rodando teste com {filein}, K={k}")
